@@ -1,0 +1,42 @@
+.two-column-container {
+  display: flex;
+}
+
+.left-column {
+  flex: 0.3;
+  background-color: white; 
+  padding: 20px; 
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px; 
+}
+
+.right-column {
+  flex: 1; 
+  background-color: #0b2252; 
+  padding: 20px; 
+}
+.button {
+  background-color: #2068de;
+  color: white;
+  padding:10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.optionbar{
+  display: block;
+  margin-bottom: 15px;
+  border:'none';
+  background-color: white;
+  border: none;
+  height: 50px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
