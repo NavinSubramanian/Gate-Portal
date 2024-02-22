@@ -3,23 +3,29 @@ import { useState } from 'react';
 
 import './Questionpage.css';
 
+import Logo from './assets/logo.png'
+
+import Question from './components/Question';
+
 const Questionpage = () => {
-    const [selectedOption, setSelectedOption] = useState(null);
-    const options = [
-        { id: 'A', value: '25' },
-        { id: 'B', value: '42' },
-        { id: 'C', value: '17' },
-        { id: 'D', value: '31' },
-    ];
-    const handleOptionSelect = (optionId) => {
-        setSelectedOption(optionId);
-    };
+
+    const [qnNumber,setQnNumber] = useState(1);
+
+    function nextQn(){
+        setQnNumber(qnNumber+1)
+        console.log(qnNumber)
+    }
+
+    const question = [
+        {id:1, question:"Alice and Bob are working on a project where they need to exchange information in a binary format. Alice sends a binary number, 110101, to Bob and asks him to convert it to its hexadecimal equivalent. Bob, being a bit puzzled, decides to first convert it to decimal and then to hexadecimal. What is the correct hexadecimal representation of the binary number Alice sent?"},
+        {id:2, question:"Question 2"}
+    ]
 
     return (
         <div style={{ display: 'flex',width:'100vw',height:'100vh'}}>
             {/* left side */}
             <div className="left-column">
-                <img src='' alt='logo'></img>
+                <img src={Logo} style={{height:'14px',width:'80px'}} alt='logo'></img>
                 <h1 style={{ color: '#2068DE', fontSize: '25px' }}>GATE MOCK</h1>
                 <p style={{ fontSize: '13px', color: 'gray',fontFamily:'Poppins',overflow:'hidden' }}>Your one-stop portal for GATE, Aptitude, and Core tests.
                     Comprehensive evaluations for knowledge, aptitude, and core competencies.
@@ -70,32 +76,11 @@ const Questionpage = () => {
 
             {/* right side */}
             <div className="right-column">
-                <div style={{ maxWidth: '1000px', margin: '0 auto',marginTop:'80px' }}>
-                    <p style={{ textAlign: 'center',color:'white',fontFamily:'Outfit' }}>1 | 30</p>
-                    <p style={{ paddingLeft: '40px', paddingRight: '40px', textAlign: 'center',color:'white',fontFamily:'Poppins' }}>Alice and Bob are working on a project where they need to exchange information in a binary format.
-                        Alice sends a binary number, 110101, to Bob and asks him to convert it to its hexadecimal equivalent.
-                        Bob, being a bit puzzled, decides to first convert it to decimal and then to hexadecimal.
-                        What is the correct hexadecimal representation of the binary number Alice sent?</p>
-                    <div style={{display:'flex',flexDirection: 'column', alignItems: 'center',marginTop:'50px'}}>
-                    {options.map((option) => (
-                        <button className='optionbar' for={`option${option.id}`} key={option.id}>
-                            <input
-                                type="radio"
-                                id={`option${option.id}`}
-                                name="options"
-                                checked={selectedOption === option.id}
-                                onChange={() => handleOptionSelect(option.id)}
-                            />
-                            <label  style={{fontFamily:'Outfit',fontSize:'20px'}}htmlFor={`option${option.id}`}>{` ${option.value}`}</label>
-                        </button>
-                    ))}
-
-                    </div>
-                </div>
-                <div>
+                <Question question={question[qnNumber-1]} />
+                <div className='rightButtons'>
                     <button>Clear Response</button>
                     <button>Mark for Review & Next</button>
-                    <button>Save & Next</button>
+                    <button onClick={nextQn}>Save & Next</button>
                 </div>
                 <button>Submit</button>
             </div>

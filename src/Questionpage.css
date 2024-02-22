@@ -40,3 +40,40 @@
   margin: 0 auto;
   text-align: center;
 }
+
+
+.rightButtons{
+  width: 100%;
+  justify-content: center;
+  column-gap: 50px;
+  margin: 20px 0;
+  display: flex;
+  overflow: visible;
+}
+.rightButtons>button{
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 5px 5px #2069de83; 
+  cursor: pointer;
+  transition: 1s;
+}
+.rightButtons>button:hover{
+  background-color: #2069de83;
+  color: white;
+  box-shadow: 0 0;
+}
+
+.right-column>button{
+  padding: 10px 15px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(4, 168, 4);
+  transition: 1s;
+  cursor: pointer;
+  float: right;
+}
+.right-column>button:hover{
+  padding: 5px 25px;
+}

@@ -10,6 +10,7 @@ import Bottom from './assets/bottom.png'
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { faCrosshairs, faBook, faAtom, faCheck, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
+import { Link } from 'react-router-dom';
 
 export default function HomePage () {
   return(
@@ -111,7 +112,7 @@ export default function HomePage () {
             <hr />
             <div className='cardDiv2'>
               <h3>25+ Mock Exams</h3>
-              <h4>View More</h4>
+              <h4><Link to='/instruction'>View More</Link></h4>
             </div>
           </div>
           <div className='examCards'>

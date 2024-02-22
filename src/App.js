@@ -9,6 +9,7 @@ import Login from './Login';
 import Signup from './Signup';
 import Questionpage from './Questionpage'
 import Instruction from './Instruction'
+import Leaderboard from './Leaderboard';
 
 
 function App () {
@@ -21,6 +22,7 @@ function App () {
         <Route path='/signup' Component={Signup}></Route>
         <Route path='/instruction' Component={Instruction}></Route>
         <Route path='/question' Component={Questionpage}></Route>
+        <Route path='/leaderboard' Component={Leaderboard}></Route>
       </Routes>
     </BrowserRouter>
   )
